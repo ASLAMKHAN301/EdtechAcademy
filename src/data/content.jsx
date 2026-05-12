@@ -263,3 +263,30 @@ export const STATUS_OPTIONS = [
   "Working Professional (2–5 yrs)", "Working Professional (5+ yrs)",
   "Career Break / Returning to Work",
 ];
+
+export const MENTORS = [
+  {
+    initials: "RK",
+    name: "Rahul Khanna",
+    role: "Senior Business Analyst",
+    company: "Deloitte",
+    companyColor: "#0A66C2",
+    bio: "8+ years of experience in business analysis, agile delivery, and stakeholder management.",
+  },
+  {
+    initials: "SP",
+    name: "Sneha Patel",
+    role: "Project Manager",
+    company: "Infosys",
+    companyColor: "#007CC3",
+    bio: "Certified PMP mentor helping professionals transition into leadership and delivery roles.",
+  },
+  {
+    initials: "AK",
+    name: "Arjun Kapoor",
+    role: "Cyber Security Lead",
+    company: "Wipro",
+    companyColor: "#96154C",
+    bio: "Expert in ethical hacking, SOC operations, and enterprise-level security systems.",
+  },
+];

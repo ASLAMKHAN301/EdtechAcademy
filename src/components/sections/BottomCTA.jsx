@@ -8,10 +8,24 @@ export default function BottomCTA() {
     <section id="enrol" style={{ background: NAVY, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, ...gridBg, pointerEvents: "none" }} />
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: GOLD }} />
-      <SectionContainer style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ padding: "80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      
+      <SectionContainer style={{ position: "relative", zIndex: 1 ,padding: "0 20px"}}>
+        <div 
+          style={{ 
+            // Clamp handles the vertical breathing room based on screen size
+            padding: "clamp(60px, 10vw, 100px) 0", 
+            display: "grid", 
+            // minmax(0, 1fr) prevents the grid items from overflowing their container
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", 
+            gap: "clamp(40px, 8vw, 80px)", 
+            alignItems: "center" 
+          }}
+        >
           <CTACopy />
-          <BookingForm light />
+          {/* Form wrapper ensures the form doesn't get too wide on mid-sized tablets */}
+          <div style={{ width: "100%", maxWidth: 480, justifySelf: "center" }}>
+            <BookingForm light />
+          </div>
         </div>
       </SectionContainer>
     </section>
@@ -20,20 +34,50 @@ export default function BottomCTA() {
 
 function CTACopy() {
   return (
-    <div>
-      <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700, color: "white", lineHeight: 1.12, letterSpacing: "-0.8px", marginBottom: 16 }}>
+    <div style={{ maxWidth: 520 }}>
+      <h2 style={{ 
+        fontFamily: "'Playfair Display', Georgia, serif", 
+        fontSize: "clamp(28px, 4vw, 42px)", 
+        fontWeight: 700, 
+        color: "white", 
+        lineHeight: 1.12, 
+        letterSpacing: "-0.8px", 
+        marginBottom: 16 
+      }}>
         One Conversation<br />
         Can Change Your{" "}
         <em style={{ fontStyle: "italic", color: GOLD }}>Career.</em>
       </h2>
-      <p style={{ fontSize: 15, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontWeight: 300, marginBottom: 32 }}>
+      <p style={{ 
+        fontSize: "clamp(14px, 1.5vw, 15px)", 
+        color: "rgba(255,255,255,0.5)", 
+        lineHeight: 1.7, 
+        fontWeight: 300, 
+        marginBottom: 32 
+      }}>
         Our advisors are working professionals who have been exactly where you are. No scripts, no hard sell — just honest
         guidance about which path is right for you and your goals.
       </p>
-      <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, padding: 0, margin: 0 }}>
+      <ul style={{ 
+        listStyle: "none", 
+        display: "flex", 
+        flexDirection: "column", 
+        gap: 14, // Slightly more gap for better tap targets on mobile
+        padding: 0, 
+        margin: 0 
+      }}>
         {CTA_CHECKLIST.map((item) => (
-          <li key={item} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14, color: "rgba(255,255,255,0.75)" }}>
-            <CheckIcon />
+          <li key={item} style={{ 
+            display: "flex", 
+            alignItems: "flex-start", // Changed to start for multi-line checklist items
+            gap: 12, 
+            fontSize: 14, 
+            color: "rgba(255,255,255,0.75)",
+            lineHeight: 1.4
+          }}>
+            <div style={{ marginTop: 2 }}>{/* Wrapper for icon alignment */}
+              <CheckIcon />
+            </div>
             {item}
           </li>
         ))}
