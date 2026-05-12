@@ -64,6 +64,7 @@ function HeroContent() {
         padding: "20px 0",
         position: "relative",
         zIndex: 1,
+        margin: "0 auto",
       }}
     >
       {/* Eyebrow */}
