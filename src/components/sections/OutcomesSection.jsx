@@ -78,7 +78,7 @@ function OutcomesRight({ isMobile }) {
           background: BORDER,
           border: `1px solid ${BORDER}`,
           borderRadius: 12,
-          overflow: "hidden",
+          // overflow: "hidden",
         }}
       >
         {OUTCOME_STATS.map((s) => (
@@ -124,10 +124,10 @@ function OutcomesRight({ isMobile }) {
       {/* Image Below Card */}
       <div
         style={{
-          marginTop: 24,
+          marginTop: -24,
           borderRadius: 16,
           // overflow: "hidden",
-          height: isMobile ? 220 : 300,
+          // height: isMobile ? 220 : 300,
         }}
       >
         <img
