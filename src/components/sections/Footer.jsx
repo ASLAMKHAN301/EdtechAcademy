@@ -28,7 +28,7 @@ export default function Footer() {
 function FooterBrand() {
   return (
     /* grid-column span ensures the brand takes more space on larger screens */
-    <div style={{ gridColumn: "1 / -1", maxWidth: "100%", marginBottom: 12 }}>
+    <div style={{ maxWidth: "100%", marginBottom: 12 }}>
       <div style={{ maxWidth: 400 }}> {/* Constrain brand width for better readability */}
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16, textDecoration: "none" }}>
           <LogoMark size={30} />
