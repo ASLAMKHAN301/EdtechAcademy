@@ -3,10 +3,10 @@
 export const NAV_LINKS = ["Programs", "Tools", "How It Works", "Outcomes", "FAQ"];
 
 export const HERO_STATS = [
-  { num: "94%",    lbl: "Placement Rate" },
-  { num: "2,400+", lbl: "Alumni Placed" },
-  { num: "150+",   lbl: "Hiring Partners" },
-  { num: "₹8.2L",  lbl: "Avg. Starting Package" },
+  { num: "34.5L",    lbl: "Highest Salary Offered" },
+  { num: "3,200+", lbl: "Careers Transitioned" },
+  { num: "55%",   lbl: "Average Hike Offered" },
+  { num: "185+",  lbl: "Companies Hired So Far" },
 ];
 
 export const TRUST_ITEMS = [

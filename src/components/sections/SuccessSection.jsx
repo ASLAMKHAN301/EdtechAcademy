@@ -1,7 +1,19 @@
 import { useState } from "react";
 import { GOLD, NAVY, gridBg } from "../../constants/theme";
-import { SUCCESS_TABS, SUCCESS_STORIES, COHORT_STATS } from "../../data/content";
-import { Eyebrow, DisplayH2, SectionContainer } from "../ui";
+import {
+  SUCCESS_TABS,
+  SUCCESS_STORIES,
+  COHORT_STATS,
+} from "../../data/content";
+
+import {
+  Eyebrow,
+  DisplayH2,
+  SectionContainer,
+} from "../ui";
+
+/* Background Image */
+import bgImage from "../../assets/redmind.jpg";
 
 export default function SuccessSection() {
   const [activeTab, setActiveTab] = useState("All Programs");
@@ -9,23 +21,67 @@ export default function SuccessSection() {
   return (
     <section
       style={{
-        background: NAVY,
         position: "relative",
         overflow: "hidden",
-        padding: "clamp(48px, 8vw, 88px) 0", // Responsive padding
+        padding: "clamp(48px, 8vw, 88px) 0",
         borderBottom: "1px solid rgba(255,255,255,0.08)",
+
+        /* Background Image */
+        backgroundImage: `
+          linear-gradient(
+            rgba(7,18,43,0.92),
+            rgba(7,18,43,0.94)
+          ),
+          url(${bgImage})
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div style={{ position: "absolute", inset: 0, ...gridBg, pointerEvents: "none" }} />
-      <SectionContainer style={{ position: "relative", zIndex: 1 ,padding: "0 20px",}}>
+      {/* Grid Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          ...gridBg,
+          pointerEvents: "none",
+        }}
+      />
+
+      <SectionContainer
+        style={{
+          position: "relative",
+          zIndex: 1,
+          padding: "0 20px",
+        }}
+      >
         <Eyebrow label="Graduate Outcomes" dark />
+
         <DisplayH2 light>
-          Real People.<br />
-          Real <em style={{ fontStyle: "italic", color: GOLD }}>Transitions.</em>
+          Real People.
+          <br />
+          Real{" "}
+          <em
+            style={{
+              fontStyle: "italic",
+              color: GOLD,
+            }}
+          >
+            Transitions.
+          </em>
         </DisplayH2>
 
-        {/* Tabs - Flex wrap handles responsiveness naturally */}
-        <div style={{ display: "flex", gap: 8, marginTop: 36, marginBottom: 32, flexWrap: "wrap" }}>
+        {/* Tabs */}
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            marginTop: 36,
+            marginBottom: 32,
+            flexWrap: "wrap",
+          }}
+        >
           {SUCCESS_TABS.map((tab) => (
             <button
               key={tab}
@@ -36,9 +92,19 @@ export default function SuccessSection() {
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: "pointer",
-                border: `1.5px solid ${activeTab === tab ? "white" : "rgba(255,255,255,0.15)"}`,
-                color: activeTab === tab ? NAVY : "rgba(255,255,255,0.55)",
-                background: activeTab === tab ? "white" : "transparent",
+                border: `1.5px solid ${
+                  activeTab === tab
+                    ? "white"
+                    : "rgba(255,255,255,0.15)"
+                }`,
+                color:
+                  activeTab === tab
+                    ? NAVY
+                    : "rgba(255,255,255,0.55)",
+                background:
+                  activeTab === tab
+                    ? "white"
+                    : "transparent",
                 fontFamily: "'Outfit', sans-serif",
                 transition: "all 0.15s",
               }}
@@ -48,12 +114,12 @@ export default function SuccessSection() {
           ))}
         </div>
 
-        {/* Story cards - Responsive Grid */}
+        {/* Story Cards */}
         <div
           style={{
             display: "grid",
-            // auto-fit + minmax handles the "wrap" logic without media queries
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
             gap: 20,
             marginBottom: 28,
           }}
@@ -98,9 +164,16 @@ function StoryCard({ story: s }) {
         display: "flex",
         flexDirection: "column",
         gap: 16,
+        backdropFilter: "blur(6px)",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+        }}
+      >
         <div
           style={{
             width: 48,
@@ -111,7 +184,8 @@ function StoryCard({ story: s }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontFamily: "'Playfair Display', Georgia, serif",
+            fontFamily:
+              "'Playfair Display', Georgia, serif",
             fontSize: 14,
             fontWeight: 700,
             color: GOLD,
@@ -120,10 +194,19 @@ function StoryCard({ story: s }) {
         >
           {s.initials}
         </div>
-        <div style={{ fontSize: 14, fontWeight: 600, color: "white" }}>{s.name}</div>
+
+        <div
+          style={{
+            fontSize: 14,
+            fontWeight: 600,
+            color: "white",
+          }}
+        >
+          {s.name}
+        </div>
       </div>
 
-      {/* Transition chip - Stack on very small screens */}
+      {/* Transition */}
       <div
         style={{
           display: "flex",
@@ -136,22 +219,82 @@ function StoryCard({ story: s }) {
         }}
       >
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "white" }}>{s.from.company}</div>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)" }}>{s.from.role}</div>
+          <div
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: "white",
+            }}
+          >
+            {s.from.company}
+          </div>
+
+          <div
+            style={{
+              fontSize: 11,
+              color: "rgba(255,255,255,0.4)",
+            }}
+          >
+            {s.from.role}
+          </div>
         </div>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-          <path d="M3 8h10M10 5l3 3-3 3" stroke={GOLD} strokeWidth="1.5" />
+
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          style={{ flexShrink: 0 }}
+        >
+          <path
+            d="M3 8h10M10 5l3 3-3 3"
+            stroke={GOLD}
+            strokeWidth="1.5"
+          />
         </svg>
+
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "white" }}>{s.to.company}</div>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)" }}>{s.to.role}</div>
+          <div
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: "white",
+            }}
+          >
+            {s.to.company}
+          </div>
+
+          <div
+            style={{
+              fontSize: 11,
+              color: "rgba(255,255,255,0.4)",
+            }}
+          >
+            {s.to.role}
+          </div>
         </div>
       </div>
 
-      <p style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.65, flex: 1 }}>
+      <p
+        style={{
+          fontSize: 13,
+          color: "rgba(255,255,255,0.6)",
+          lineHeight: 1.65,
+          flex: 1,
+        }}
+      >
         {s.quote}
       </p>
-      <a href="#enrol" style={{ fontSize: 12, fontWeight: 600, color: GOLD, textDecoration: "none" }}>
+
+      <a
+        href="#enrol"
+        style={{
+          fontSize: 12,
+          fontWeight: 600,
+          color: GOLD,
+          textDecoration: "none",
+        }}
+      >
         Read full story →
       </a>
     </div>
@@ -160,10 +303,16 @@ function StoryCard({ story: s }) {
 
 function CohortStats() {
   return (
-    <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 52 }}>
+    <div
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+        paddingTop: 52,
+      }}
+    >
       <div
         style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily:
+            "'Playfair Display', Georgia, serif",
           fontSize: "clamp(22px, 2.5vw, 32px)",
           fontWeight: 700,
           color: "white",
@@ -174,11 +323,12 @@ function CohortStats() {
       >
         How Your Avg Cohort Looks Like
       </div>
+
       <div
         style={{
           display: "grid",
-          // Stats can be smaller, so minmax(200px) is safer
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(200px, 1fr))",
           gap: 20,
         }}
       >
@@ -190,11 +340,13 @@ function CohortStats() {
               border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: 10,
               padding: "28px 24px",
+              backdropFilter: "blur(6px)",
             }}
           >
             <div
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
+                fontFamily:
+                  "'Playfair Display', Georgia, serif",
                 fontSize: 44,
                 fontWeight: 700,
                 color: c.color,
@@ -205,7 +357,14 @@ function CohortStats() {
             >
               {c.num}
             </div>
-            <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.4 }}>
+
+            <div
+              style={{
+                fontSize: 13,
+                color: "rgba(255,255,255,0.45)",
+                lineHeight: 1.4,
+              }}
+            >
               {c.lbl}
             </div>
           </div>

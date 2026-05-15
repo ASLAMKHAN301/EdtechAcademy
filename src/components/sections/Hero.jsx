@@ -4,22 +4,29 @@ import { GOLD, NAVY, gridBg } from "../../constants/theme";
 import { HERO_STATS } from "../../data/content";
 import BookingForm from "../ui/BookingForm";
 
+import heroBg from "../../assets/austin-distel-rxpThOwuVgE-unsplash.jpg";
+
 export default function Hero() {
   return (
     <section
       style={{
-        background: NAVY,
         position: "relative",
         overflow: "hidden",
-        padding: "40px 20px",
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: 40,
-        alignItems: "center",
         minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+
+        /* Background Image */
+        backgroundImage: `linear-gradient(
+          rgba(7, 15, 43, 0.85),
+          rgba(7, 15, 43, 0.9)
+        ), url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Decorative overlays */}
+      {/* Decorative Grid Overlay */}
       <div
         style={{
           position: "absolute",
@@ -29,6 +36,7 @@ export default function Hero() {
         }}
       />
 
+      {/* Top Gold Line */}
       <div
         style={{
           position: "absolute",
@@ -40,18 +48,35 @@ export default function Hero() {
         }}
       />
 
-      <HeroContent />
-
+      {/* Main Container */}
       <div
         style={{
+          maxWidth: "1160px",
+          margin: "0 auto",
+          padding: "80px 20px",
           position: "relative",
           zIndex: 1,
           width: "100%",
-          maxWidth: 420,
-          margin: "0 auto",
+
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: 40,
+          alignItems: "center",
         }}
       >
-        <BookingForm />
+        <HeroContent />
+
+        {/* Booking Form */}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: 420,
+            margin: "0 auto",
+          }}
+        >
+          <BookingForm />
+        </div>
       </div>
     </section>
   );
@@ -61,10 +86,8 @@ function HeroContent() {
   return (
     <div
       style={{
-        padding: "20px 0",
         position: "relative",
         zIndex: 1,
-        margin: "0 auto",
       }}
     >
       {/* Eyebrow */}
@@ -98,6 +121,7 @@ function HeroContent() {
         </span>
       </div>
 
+      {/* Heading */}
       <h1
         style={{
           fontFamily: "'Playfair Display', Georgia, serif",
@@ -113,15 +137,21 @@ function HeroContent() {
         <br />
         Becomes a
         <br />
-        <em style={{ fontStyle: "italic", color: GOLD }}>
+        <em
+          style={{
+            fontStyle: "italic",
+            color: GOLD,
+          }}
+        >
           Career.
         </em>
       </h1>
 
+      {/* Description */}
       <p
         style={{
           fontSize: 16,
-          color: "rgba(255,255,255,0.7)",
+          color: "rgba(255,255,255,0.75)",
           lineHeight: 1.8,
           maxWidth: 520,
           marginBottom: 36,
@@ -161,7 +191,7 @@ function HeroContent() {
         <a
           href="#programs"
           style={{
-            color: "rgba(255,255,255,0.8)",
+            color: "rgba(255,255,255,0.85)",
             fontSize: 14,
             fontWeight: 500,
             padding: "14px 28px",
@@ -189,7 +219,8 @@ function StatRow() {
           "repeat(auto-fit, minmax(120px, 1fr))",
         gap: 24,
         marginTop: 50,
-        borderTop: "1px solid rgba(255,255,255,0.1)",
+        borderTop:
+          "1px solid rgba(255,255,255,0.15)",
         paddingTop: 30,
       }}
     >
@@ -211,7 +242,7 @@ function StatRow() {
           <div
             style={{
               fontSize: 12,
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(255,255,255,0.6)",
               lineHeight: 1.5,
             }}
           >

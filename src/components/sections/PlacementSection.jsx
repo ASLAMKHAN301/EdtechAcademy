@@ -1,17 +1,38 @@
 import { GOLD, NAVY, gridBg } from "../../constants/theme";
 
-import { PLACEMENT_FEATURES, PLACEMENT_STATS } from "../../data/content";
+import {
+  PLACEMENT_FEATURES,
+  PLACEMENT_STATS,
+} from "../../data/content";
 
-import { Eyebrow, DisplayH2, SectionContainer } from "../ui";
+import {
+  Eyebrow,
+  DisplayH2,
+  SectionContainer,
+} from "../ui";
+
+// Background Image
+import placementBg from "../../assets/charlesdeluvio-Lks7vei-eAg-unsplash.jpg";
 
 export default function PlacementSection() {
   return (
     <section
       style={{
-        background: NAVY,
         position: "relative",
         overflow: "hidden",
         padding: "80px 0px",
+
+        /* Background Image */
+        backgroundImage: `
+          linear-gradient(
+            rgba(7, 18, 43, 0.88),
+            rgba(7, 18, 43, 0.92)
+          ),
+          url(${placementBg})
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Background Grid */}
@@ -24,12 +45,20 @@ export default function PlacementSection() {
         }}
       />
 
+      {/* Optional Blur Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backdropFilter: "blur(2px)",
+          background: "rgba(0,0,0,0.15)",
+        }}
+      />
+
       <SectionContainer
         style={{
           position: "relative",
           zIndex: 1,
-          // maxWidth: 1160,
-          // margin: "0 auto",
           padding: "0 20px",
         }}
       >
@@ -37,7 +66,8 @@ export default function PlacementSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(320px, 1fr))",
             gap: 50,
             alignItems: "center",
           }}
@@ -79,15 +109,17 @@ function PlacementLeft() {
           marginBottom: 40,
         }}
       >
-        100% placement assistance means exactly that — dedicated, active support
-        until you receive an offer.
+        100% placement assistance means exactly that —
+        dedicated, active support until you receive an
+        offer.
       </p>
 
       {/* Features Grid */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(220px, 1fr))",
           gap: 24,
         }}
       >
@@ -106,14 +138,20 @@ function PlacementLeft() {
                 width: 52,
                 height: 52,
                 background: "rgba(201,168,76,0.12)",
-                border: "1px solid rgba(201,168,76,0.25)",
+                border:
+                  "1px solid rgba(201,168,76,0.25)",
                 borderRadius: 10,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <svg width="22" height="22" viewBox="0 0 22 22" fill={GOLD}>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill={GOLD}
+              >
                 <circle cx="11" cy="11" r="9" />
               </svg>
             </div>
@@ -159,6 +197,7 @@ function PlacementCard() {
         padding: "36px 28px",
         width: "100%",
         boxSizing: "border-box",
+        backdropFilter: "blur(10px)",
       }}
     >
       {/* Top Label */}
@@ -178,7 +217,8 @@ function PlacementCard() {
       {/* Heading */}
       <div
         style={{
-          fontFamily: "'Playfair Display', Georgia, serif",
+          fontFamily:
+            "'Playfair Display', Georgia, serif",
           fontSize: "clamp(24px, 4vw, 32px)",
           fontWeight: 700,
           color: "white",
@@ -202,7 +242,8 @@ function PlacementCard() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(140px, 1fr))",
           gap: 18,
           marginBottom: 30,
         }}
@@ -218,7 +259,8 @@ function PlacementCard() {
           >
             <div
               style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
+                fontFamily:
+                  "'Playfair Display', Georgia, serif",
                 fontSize: 30,
                 fontWeight: 700,
                 color: GOLD,
