@@ -25,14 +25,15 @@ export default function PlacementSection() {
         /* Background Image */
         backgroundImage: `
           linear-gradient(
-            rgba(7, 18, 43, 0.88),
-            rgba(7, 18, 43, 0.92)
-          ),
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.82)
+  ),
           url(${placementBg})
         `,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backdropFilter: "blur(8px)",
       }}
     >
       {/* Background Grid */}

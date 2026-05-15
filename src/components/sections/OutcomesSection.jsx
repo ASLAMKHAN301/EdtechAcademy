@@ -68,43 +68,79 @@ function OutcomesLeft({ isMobile }) {
 
 function OutcomesRight({ isMobile }) {
   return (
-    <div style={{ 
-      display: "grid", 
-      // Chote phones par stats ko 1 column kiya ja sakta hai, 
-      // lekin normally stats 2x2 grid mein ache lagte hain
-      gridTemplateColumns: "1fr 1fr", 
-      gap: 1, 
-      background: BORDER, 
-      border: `1px solid ${BORDER}`, 
-      alignSelf: "start", 
-      marginTop: isMobile ? 0 : 8 
-    }}>
-      {OUTCOME_STATS.map((s) => (
-        <div 
-          key={s.num} 
-          style={{ 
-            background: s.dark ? NAVY : CREAM, 
-            padding: isMobile ? "20px 16px" : "28px 24px", 
-            display: "flex", 
-            flexDirection: "column", 
-            gap: 6 
+    <div>
+      {/* Stats Card */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 1,
+          background: BORDER,
+          border: `1px solid ${BORDER}`,
+          borderRadius: 12,
+          overflow: "hidden",
+        }}
+      >
+        {OUTCOME_STATS.map((s) => (
+          <div
+            key={s.num}
+            style={{
+              background: s.dark ? NAVY : CREAM,
+              padding: isMobile ? "20px 16px" : "28px 24px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 6,
+              minHeight: 170,
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: isMobile ? 32 : 38,
+                fontWeight: 700,
+                color: s.dark ? GOLD : NAVY,
+                lineHeight: 1,
+                letterSpacing: "-1px",
+              }}
+            >
+              {s.num}
+            </div>
+
+            <div
+              style={{
+                fontSize: 11,
+                color: s.dark
+                  ? "rgba(255,255,255,0.5)"
+                  : STONE,
+                lineHeight: 1.4,
+              }}
+            >
+              {s.label}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Image Below Card */}
+      <div
+        style={{
+          marginTop: 24,
+          borderRadius: 16,
+          overflow: "hidden",
+          height: isMobile ? 220 : 300,
+        }}
+      >
+        <img
+          src="/gallery/fotos.png"
+          alt="students"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: 16,
           }}
-        >
-          <div style={{ 
-            fontFamily: "'Playfair Display', Georgia, serif", 
-            fontSize: isMobile ? 32 : 38, 
-            fontWeight: 700, 
-            color: s.dark ? GOLD : NAVY, 
-            lineHeight: 1, 
-            letterSpacing: "-1px" 
-          }}>
-            {s.num}
-          </div>
-          <div style={{ fontSize: 11, color: s.dark ? "rgba(255,255,255,0.5)" : STONE, lineHeight: 1.4 }}>
-            {s.label}
-          </div>
-        </div>
-      ))}
+        />
+      </div>
     </div>
   );
 }

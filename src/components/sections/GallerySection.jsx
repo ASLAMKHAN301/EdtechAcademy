@@ -33,14 +33,15 @@ export default function GallerySection() {
       style={{
         backgroundImage: `
           linear-gradient(
-            rgba(7, 18, 43, 0.88),
-            rgba(7, 18, 43, 0.92)
-          ),
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.82)
+  ),
           url(${bgImage})
         `,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backdropFilter: "blur(8px)",
       }}
     >
       {/* Optional Blur Overlay */}

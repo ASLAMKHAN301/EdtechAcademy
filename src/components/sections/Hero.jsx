@@ -18,12 +18,13 @@ export default function Hero() {
 
         /* Background Image */
         backgroundImage: `linear-gradient(
-          rgba(7, 15, 43, 0.85),
-          rgba(7, 15, 43, 0.9)
-        ), url(${heroBg})`,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.82)
+  ), url(${heroBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backdropFilter: "blur(8px)",
       }}
     >
       {/* Decorative Grid Overlay */}
@@ -59,8 +60,7 @@ export default function Hero() {
           width: "100%",
 
           display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit, minmax(320px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           gap: 40,
           alignItems: "center",
         }}
@@ -158,9 +158,8 @@ function HeroContent() {
           fontWeight: 300,
         }}
       >
-        Industry-aligned training in Business Analysis,
-        Project Management, Cyber Security, and Data
-        Science — with dedicated placement support from
+        Industry-aligned training in Business Analysis, Project Management,
+        Cyber Security, and Data Science — with dedicated placement support from
         enrolment to offer letter.
       </p>
 
@@ -215,12 +214,10 @@ function StatRow() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns:
-          "repeat(auto-fit, minmax(120px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
         gap: 24,
         marginTop: 50,
-        borderTop:
-          "1px solid rgba(255,255,255,0.15)",
+        borderTop: "1px solid rgba(255,255,255,0.15)",
         paddingTop: 30,
       }}
     >
@@ -228,8 +225,7 @@ function StatRow() {
         <div key={s.num}>
           <div
             style={{
-              fontFamily:
-                "'Playfair Display', Georgia, serif",
+              fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: 30,
               fontWeight: 700,
               color: "white",

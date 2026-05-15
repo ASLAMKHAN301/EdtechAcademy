@@ -4,7 +4,7 @@ import { SectionContainer, CheckIcon } from "../ui";
 import BookingForm from "../ui/BookingForm";
 
 /* Background Image */
-import bgImage from "../../assets/austin-distel-rxpThOwuVgE-unsplash.jpg";
+import bgImage from "../../assets/annie-spratt.jpg";
 
 export default function BottomCTA() {
   return (
@@ -17,14 +17,15 @@ export default function BottomCTA() {
         /* Background Image */
         backgroundImage: `
           linear-gradient(
-            rgba(7,18,43,0.92),
-            rgba(7,18,43,0.95)
-          ),
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.82)
+  ),
           url(${bgImage})
         `,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backdropFilter: "blur(8px)",
       }}
     >
       {/* Grid Overlay */}
