@@ -33,7 +33,7 @@ function FooterBrand() {
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16, textDecoration: "none" }}>
           <LogoMark size={30} />
           <strong style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 15, color: "white", fontWeight: 700 }}>
-            Edtech Academy
+            CodersBloom
           </strong>
         </a>
         <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, fontWeight: 300 }}>
