@@ -53,7 +53,7 @@ export default function GallerySection() {
         {/* Heading */}
         <div className="text-center py-14">
           <h2 className="text-white text-4xl md:text-5xl font-bold pb-5">
-            The Imarticus Life
+            The Coders Bloom Class
           </h2>
 
           <p className="text-white/70 text-center text-lg mx-auto">

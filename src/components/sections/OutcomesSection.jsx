@@ -126,7 +126,7 @@ function OutcomesRight({ isMobile }) {
         style={{
           marginTop: 24,
           borderRadius: 16,
-          overflow: "hidden",
+          // overflow: "hidden",
           height: isMobile ? 220 : 300,
         }}
       >

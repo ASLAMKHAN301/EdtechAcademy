@@ -72,7 +72,7 @@ export default function Nav() {
                   letterSpacing: "-0.3px",
                 }}
               >
-                Edtech Academy
+                CodersBloom
               </strong>
 
               <span
@@ -99,7 +99,7 @@ export default function Nav() {
                   letterSpacing: "-0.3px",
                 }}
               >
-                17
+                17+
               </strong>
               <span
                 style={{
