@@ -15,7 +15,7 @@ export default function OutcomesSection() {
   const isMobile = windowWidth < 991;
 
   return (
-    <section id="outcomes" style={{ background: "white", borderBottom: `1px solid ${BORDER}`, padding: isMobile ? "60px 0" : "88px 0" }}>
+    <section id="outcomes" style={{ background: "white", borderBottom: `1px solid ${BORDER}`, padding: isMobile ? "60px 0 0 0" : "88px 0 0 0" }}>
       {/* Container with 20px padding */}
       <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 20px" }}>
         <div style={{ 

@@ -87,7 +87,7 @@ export default function Nav() {
                 Training & Placement
               </span>
             </div>
-            <div className="border h-10 border-l-2 border-b-gray-700"></div>
+            <div className="border h-10 border-l-2 border-gray-700"></div>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <strong
                 style={{
