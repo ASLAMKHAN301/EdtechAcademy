@@ -50,7 +50,7 @@ export default function TrustStrip() {
             textAlign: "center",
           }}
         >
-          Why Edtech
+          Why CodersBloom
         </span>
 
         {/* Trust Items */}

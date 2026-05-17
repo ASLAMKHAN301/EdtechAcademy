@@ -19,6 +19,9 @@ import PlacementSection   from "./components/sections/PlacementSection";
 import SuccessSection     from "./components/sections/SuccessSection";
 import FAQSection         from "./components/sections/FAQSection";
 import BottomCTA          from "./components/sections/BottomCTA";
+import Origin          from "./components/sections/Origin";
+import Thing          from "./components/sections/Four";
+import Location          from "./components/sections/Location";
 
 export default function App() {
   return (
@@ -30,6 +33,10 @@ export default function App() {
       {/* Main content */}
       <Hero />
       <TrustStrip />
+      <Origin/>
+      <Thing/>
+      <Location/>
+
       <ProgramsSection />
       <ToolsSection />
       <ProcessSection />
