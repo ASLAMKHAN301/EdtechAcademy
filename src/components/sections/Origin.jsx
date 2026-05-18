@@ -16,7 +16,7 @@ const C = {
 /* ─── Shared atoms ───────────────────────────────────────────────────────────── */
 const Wrap = ({ children, className = "" }) => (
   <div
-    className={`max-w-[1160px] mx-auto px-5 sm:px-8 lg:px-[80px] ${className}`}
+    className={`px-5 sm:px-8 lg:px-[105px] ${className}`}
   >
     {children}
   </div>
@@ -157,7 +157,7 @@ export default function Origin () {
       style={{ background: C.white, borderColor: C.border }}
     >
       <Wrap>
-        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-12 lg:gap-[100px] items-start" >
+        <div className="max-w-[1160px] grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-12 lg:gap-[100px] items-start" >
           {/* LEFT — sticky on desktop */}
           <div className="lg:sticky lg:top-[88px]">
             {/* Year */}

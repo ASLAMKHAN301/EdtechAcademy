@@ -17,7 +17,7 @@ const C = {
 /* ─── Shared atoms ───────────────────────────────────────────────────────────── */
 const Wrap = ({ children, className = "" }) => (
   <div
-    className={`max-w-[1160px] mx-auto px-5 sm:px-8 lg:px-[100px] ${className}`}
+    className={`px-5 sm:px-8 lg:px-[105px] ${className}`}
   >
     {children}
   </div>
@@ -247,7 +247,7 @@ export default function Four() {
       style={{ background: C.cream, borderColor: C.border }}
     >
       <Wrap>
-        <div className="mb-12 sm:mb-16">
+        <div className="max-w-[1160px] mb-12 sm:mb-16">
           <Eyebrow label="Our Model" />
           <Display className="mt-1 max-w-[640px]">
             Four Things That Make

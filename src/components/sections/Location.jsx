@@ -19,7 +19,7 @@ const C = {
 /* ─── Shared atoms ───────────────────────────────────────────────────────────── */
 const Wrap = ({ children, className = "" }) => (
   <div
-    className={`max-w-[1160px] mx-auto px-5 sm:px-8 lg:px-[100px] ${className}`}
+    className={`px-5 sm:px-8 lg:px-[105px] ${className}`}
   >
     {children}
   </div>
@@ -184,7 +184,7 @@ export default function Locations() {
       }}
     >
       <GridBg opacity={0.05} />
-      <Wrap className="relative z-10">
+      <Wrap className="max-w-[1160px] relative z-10">
         <Eyebrow label="Where We Operate" dark />
         <Display light className="mt-1">
           Training Across
